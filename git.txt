@@ -1,0 +1,33 @@
+基本信息配置：
+     git config --global user.name 'jenkinguo'
+     git config --global user.email "1012039581@qq.com"
+
+初始化一个Git仓库：
+     mkdir test --新建文件夹  cd test--进入文件夹 pwd--当前文件目录 touch test.php--创建php文件
+
+     git init --初始化 生成.git文件夹
+     git status --文件状态
+
+添加到仓库：
+     git add test.php --添加指定文件到暂存区
+
+     ·  git add -A  提交所有变化
+     ·  git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+     ·  git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+
+     git commit -m 'add test.php' --提交暂存区到仓库区
+
+修改：
+     vi test.php--进入修改 i--进入修改 esc--退出修改  :wq--保存
+     git add test.php
+     git commit -m '第一次修改'  --重新提交
+
+删除：
+     rm -rf test.php --删除文件
+     git rm test.php --暂存区删除
+     git commit -m '第一次删除'
+
+Git管理远程仓库：
+     git clone https://github.com/jenkinguo/test.git --下载一个项目和它的整个代码历史  可以尝试把https://换成      git://
+     vi xx.php---git add xx.php---git commit -m 'xx'
+     git push --推送到仓库

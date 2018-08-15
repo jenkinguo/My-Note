@@ -1,0 +1,55 @@
+Javascript:
+   Object.prototype.toString.call(obj); 输出[object Object/Array/Function/Boolean/Number/String/Undefined]
+   var args = Array.prototype.slice.call(fakeArray) 伪数组转化为数组
+   instanceof 只能判断对象的类型 new出来的对象即 new String() new Array()	
+
+   location.pathname 获取地址
+   .slice(8, -1) 从8开始（包括8）截取倒数第二个元素
+   ulObj.appendChild(ulObj.children[0].cloneNode(true)); 克隆元素
+
+   :first-child: 找到P元素,通过P找到父元素,再通过父元素找所有子元素,找到第一个子元素,匹配是否为P,不是则为无效选择   器（所有该选择器不适合用于掺杂有其他标签的用法）用：first-of-type代替
+
+   caller: 在一个函数调用另一个函数时，被调用函数会自动生成一个caller属性，指向调用它的函数对象。如果该函数当前未被调用，或并非被其他函数调用，则caller为null。
+
+   callee:当函数被调用时，它的arguments.callee对象就会指向自身，也就是一个对自己的引用。
+由于arguments在函数被调用时才有效，因此arguments.callee在函数未调用时是不存在的（即null.callee），且解引用它会产生异常。
+
+
+
+
+
+jQuery部分:
+  .hasClass()-- .addClass()-- .removeClass()-- .toggleClass()样式切换
+
+  $("#txt").trigger("focus") -- 事件触发
+
+选择器: "+"下一个兄弟 "~"后面的兄弟  
+
+        $('li:odd')--奇选择器 $('li:even')--偶选择器
+
+	.children() 返回被选元素的所有直接子元素
+	
+	.find() 返回被选元素的后代元素
+	
+	.eq(n) 返回带有被选元素的指定索引号的元素
+
+	索引：$("ul>li:lt(5)")小于5-- $("ul>li:gt(5)")大于5-- $("ul>li:eq(2)")索引为2
+
+	.clone() 复制一个元素 var li = $('li').clone()
+	
+	var jq = $.noConflict(); 释放$ 将 jQuery 赋给 jq
+
+off:
+
+	把父级元素和子级元素的点击事件解绑
+		$("#dv").off("click");
+	父级元素和子级的元素的多个事件,中间用空格
+		$("#dv").off("click mouseenter");
+	解绑p标签的点击事件
+ 		$("#dv").off("click","p");
+	p的两个事件都没了
+		$("#dv").off("click mouseenter","p");
+	p的所有的事件全部解绑
+		$("#dv").off("","p");
+	干掉div中所有的子元素的点击事件
+ 		$("#dv").off("click","**");
